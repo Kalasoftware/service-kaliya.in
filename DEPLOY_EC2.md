@@ -99,7 +99,7 @@ server {
     server_name kaliya.in www.kaliya.in;
 
     location / {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:5000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -193,9 +193,9 @@ In AWS Console, ensure your EC2 security group allows:
 pm2 logs kaliya-website --lines 100
 ```
 
-**Port 3000 already in use:**
+**Port 5000 already in use:**
 ```bash
-sudo lsof -i :3000
+sudo lsof -i :5000
 pm2 delete all
 pm2 start npm --name "kaliya-website" -- start
 ```
